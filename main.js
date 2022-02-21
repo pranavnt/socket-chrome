@@ -1,17 +1,15 @@
-let axiosScript = document.createElement('script')
-axiosScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js'
+const createEl = (name, score) => {
+  return `<div class="_702d723c dib w-50 bb b--black-10 pr2 w-100"><h3 class="c84e15be f5 mt2 pt2 mb0">${name}</h3><p class="f2874b88 fw6 mb3 mt2 truncate black-80 f4">${score}</p></div>`;
+};
 
-const lib = "semver"
+const getData = (lib) => {
+  return await fetch(
+    `https://socket.dev/api/npm/package-info/score?name=${lib}`
+  )
+    .then((response) => response.json())
+    .catch((e) => {
+      console.error(e);
+    });
+};
 
-axiosScript.onload = () => {
-	const data;
-
-	axios.get(`https://socket.dev/api/npm/package-info/score?name=${semver}`) 
-		.then(response => {		
-			data = response.data;
-		})
-		.catch(e =>  {
-			console.log(e)
-		}) 
-	console.log(data)
-}
+console.log(getData("semver"));

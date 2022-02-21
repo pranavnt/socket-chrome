@@ -1,19 +1,14 @@
 {
-	"manifest_version": 2,
-	"name": "Unnoficial Socket Chrome Extension",
-	"version": "0.0.1",
-	"description": "Adds Socket's security scores to NPM's website",
-	"content_scripts": 
-	[
-		{
-			"matches": ["*://*.npmjs.com/*"],
-			"js": ["main.js"],
-			"run_at": "document_end"
-		}
-	],
-	"permissions": [
-   "tabs",
-	 "activeTab"
-	]	
+  "manifest_version": 2,
+  "name": "Unnoficial Socket Chrome Extension",
+  "version": "0.0.1",
+  "description": "Adds Socket's security scores to NPM's website",
+  "content_scripts": [
+    {
+      "matches": ["*://*.npmjs.com/*"],
+      "js": ["main.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["tabs", "activeTab"]
 }
-
